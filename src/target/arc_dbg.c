@@ -541,6 +541,8 @@ int arc_dbg_halt(struct target *target)
 
 	/* update state and notify gdb*/
 	target->state = TARGET_HALTED;
+	// save regs start
+	arc_dbg_debug_entry(target);
 	target_call_event_callbacks(target, TARGET_EVENT_HALTED);
 
 	return ERROR_OK;
