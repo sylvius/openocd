@@ -36,6 +36,7 @@ libtarget_la_SOURCES = \
 	$(MIPS32_SRC) \
 	$(NDS32_SRC) \
 	$(INTEL_IA32_SRC) \
+ 	$(ARC32_SRC) \
 	avrt.c \
 	dsp563xx.c \
 	dsp563xx_once.c \
@@ -51,6 +52,15 @@ TARGET_CORE_SRC = \
 	target_request.c \
 	testee.c \
 	smp.c
+
+ARC32_SRC = \
+ 	arc32.c \
+ 	arc_dbg.c \
+ 	arc_jtag.c \
+ 	arc_mem.c \
+ 	arc_mntr.c \
+ 	arc_ocd.c \
+ 	arc_regs.c
 
 ARMV4_5_SRC = \
 	armv4_5.c \
@@ -204,7 +214,14 @@ noinst_HEADERS = \
 	nds32_v3m.h \
 	nds32_aice.h \
 	lakemont.h \
-	x86_32_common.h
+	x86_32_common.h \
+ 	arc32.h \
+ 	arc_dbg.h \
+ 	arc_jtag.h \
+ 	arc_mem.h \
+ 	arc_mntr.h \
+ 	arc_ocd.h \
+ 	arc_regs.h
 
 ocddatadir = $(pkglibdir)
 nobase_dist_ocddata_DATA =
