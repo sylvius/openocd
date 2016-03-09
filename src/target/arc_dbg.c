@@ -229,7 +229,7 @@ static int arc_dbg_unset_breakpoint(struct target *target,
 				LOG_WARNING("Software breakpoint @0x%" PRIx32
 					" has been overwritten outside of debugger. "
 					"Expected: 0x%04" PRIx16 ", got: 0x%04" PRIx16,
-					breakpoint->address, ARC16_SDBBP, current_instr);
+					breakpoint->address, (unsigned short)ARC16_SDBBP, current_instr);
 			}
 		} else {
 			LOG_ERROR("Invalid breakpoint length: target supports only 2 or 4");
