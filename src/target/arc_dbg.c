@@ -756,7 +756,7 @@ int arc_dbg_remove_breakpoint(struct target *target,
 	if (breakpoint->set)
 		retval = arc_dbg_unset_breakpoint(target, breakpoint);
 
-	return ERROR_OK;
+	return retval;
 }
 
 int arc_dbg_add_watchpoint(struct target *target,
@@ -771,7 +771,7 @@ int arc_dbg_add_watchpoint(struct target *target,
 
 	retval = arc_dbg_set_watchpoint(target, watchpoint);
 
-	return ERROR_OK;
+	return retval;	
 }
 
 int arc_dbg_remove_watchpoint(struct target *target,
@@ -787,7 +787,7 @@ int arc_dbg_remove_watchpoint(struct target *target,
 	if (watchpoint->set)
 		retval = arc_dbg_unset_watchpoint(target, watchpoint);
 
-	return ERROR_OK;
+	return retval;
 }
 
 int arc_hit_watchpoint(struct target *target, struct watchpoint **hit_watchpoint)
